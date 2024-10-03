@@ -9,7 +9,7 @@ from secrets_1 import AUTH, CONFLUENCE_CONTENT_URL, LOCAL_VSS_PATH, SPACE_KEY
 HEADERS = {
     'Authorization': f'Bearer {AUTH}',
     'X-Atlassian-Token': 'nocheck'}
-PARENT_PAGE_ID = "1146957"  # ID родительской страницы в Confluence
+PARENT_PAGE_ID = "360468"  # ID родительской страницы в Confluence
 
 def convert_word_to_html(word_file):
     # Генерация имени для HTML файла и директории media

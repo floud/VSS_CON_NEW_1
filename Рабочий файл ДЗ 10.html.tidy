@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Apple macOS version 5.8.0" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Рабочий файл ДЗ 10</title>
+  <style>
+  <![CDATA[
+  html {
+  color: #1a1a1a;
+  background-color: #fdfdfd;
+  }
+  body {
+  margin: 0 auto;
+  max-width: 36em;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  }
+  @media (max-width: 600px) {
+  body {
+  font-size: 0.9em;
+  padding: 12px;
+  }
+  h1 {
+  font-size: 1.8em;
+  }
+  }
+  @media print {
+  html {
+  background-color: white;
+  }
+  body {
+  background-color: transparent;
+  color: black;
+  font-size: 12pt;
+  }
+  p, h2, h3 {
+  orphans: 3;
+  widows: 3;
+  }
+  h2, h3, h4 {
+  page-break-after: avoid;
+  }
+  }
+  p {
+  margin: 1em 0;
+  }
+  a {
+  color: #1a1a1a;
+  }
+  a:visited {
+  color: #1a1a1a;
+  }
+  img {
+  max-width: 100%;
+  }
+  svg {
+  height: auto;
+  max-width: 100%;
+  }
+  h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.4em;
+  }
+  h5, h6 {
+  font-size: 1em;
+  font-style: italic;
+  }
+  h6 {
+  font-weight: normal;
+  }
+  ol, ul {
+  padding-left: 1.7em;
+  margin-top: 1em;
+  }
+  li > ol, li > ul {
+  margin-top: 0;
+  }
+  blockquote {
+  margin: 1em 0 1em 1.7em;
+  padding-left: 1em;
+  border-left: 2px solid #e6e6e6;
+  color: #606060;
+  }
+  code {
+  font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+  font-size: 85%;
+  margin: 0;
+  hyphens: manual;
+  }
+  pre {
+  margin: 1em 0;
+  overflow: auto;
+  }
+  pre code {
+  padding: 0;
+  overflow: visible;
+  overflow-wrap: normal;
+  }
+  .sourceCode {
+  background-color: transparent;
+  overflow: visible;
+  }
+  hr {
+  background-color: #1a1a1a;
+  border: none;
+  height: 1px;
+  margin: 1em 0;
+  }
+  table {
+  margin: 1em 0;
+  border-collapse: collapse;
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+  font-variant-numeric: lining-nums tabular-nums;
+  }
+  table caption {
+  margin-bottom: 0.75em;
+  }
+  tbody {
+  margin-top: 0.5em;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  }
+  th {
+  border-top: 1px solid #1a1a1a;
+  padding: 0.25em 0.5em 0.25em 0.5em;
+  }
+  td {
+  padding: 0.125em 0.5em 0.25em 0.5em;
+  }
+  header {
+  margin-bottom: 4em;
+  text-align: center;
+  }
+  #TOC li {
+  list-style: none;
+  }
+  #TOC ul {
+  padding-left: 1.3em;
+  }
+  #TOC > ul {
+  padding-left: 0;
+  }
+  #TOC a:not(:hover) {
+  text-decoration: none;
+  }
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  div.columns{display: flex; gap: min(4vw, 1.5em);}
+  div.column{flex: auto; overflow-x: auto;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+  ul.task-list[class]{list-style: none;}
+  ul.task-list li input[type="checkbox"] {
+  font-size: inherit;
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+  }
+  .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  ]]>
+  </style>
+</head>
+<body>
+  <table>
+    <colgroup>
+      <col style="width: 32%" />
+      <col style="width: 34%" />
+      <col style="width: 32%" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th colspan="3" style="text-align: center;"><strong>План
+        тестирования</strong></th>
+      </tr>
+      <tr>
+        <th><strong>Идентификатор программы:</strong> Capsule</th>
+        <th colspan="2"><strong>Номер версии:</strong> укажите
+        версию</th>
+      </tr>
+      <tr>
+        <th>
+          <p><strong>Тестировщик:</strong></p>
+          <p><em>укажите ваше имя и фамилию</em></p>
+        </th>
+        <th><strong>Дата составления:</strong> ___________</th>
+        <th><strong>Дата проведения:</strong> ___________</th>
+      </tr>
+      <tr>
+        <th colspan="3">
+          <p><strong>Результаты</strong> (заполните чекбокс, при
+          необходимости укажите идентификаторы тестов, которые не
+          были пройдены)<strong>:</strong></p>
+          <ul>
+            <li>
+              <p>пройдено</p>
+            </li>
+            <li>
+              <p>не пройдено</p>
+            </li>
+          </ul>
+        </th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Идентификатор теста:</strong>
+        Capsule-1</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Тестируемое требование:</strong> у
+        пользователя должна быть возможность увидеть детальное
+        расположение и адрес отелей на карте.</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Цель:</strong> по клику на карте на
+        символ отеля в всплывающей подсказке должен отображаться
+        адрес выбранного отеля и названия ближайших станций
+        метро.</th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест-кейсы</strong></th>
+      </tr>
+      <tr>
+        <th style="text-align: center;">Идентификатор
+        интерфейса</th>
+        <th style="text-align: center;">Шаг</th>
+        <th style="text-align: center;">Введенное значение</th>
+      </tr>
+      <tr>
+        <th>1. Главная страница</th>
+        <th>Нажать на пункт меню в шапке сайта «Где найти»</th>
+        <th>-</th>
+      </tr>
+      <tr>
+        <th>2. Главная страница</th>
+        <th>Нажать на символ отеля на карте и увидеть название
+        отеля, адрес и ближайшие станции метро.</th>
+        <th>-</th>
+      </tr>
+      <tr>
+        <th>3. Главная страница</th>
+        <th>Нажать на символ «крестика» в появившемся окне.</th>
+        <th>-</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Скрипт:</strong> нет</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Ожидаемые результаты:</strong> по
+        клику на карте на символ отеля в всплывающей подсказке
+        должен отображаться адрес выбранного отеля и названия
+        ближайших станций метро.</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong><mark>Фактические
+        результаты:</mark></strong></th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Идентификатор теста:</strong>
+        Capsule-2</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Тестируемое требование:</strong> у
+        пользователя должна быть возможность увидеть детальное
+        расположение и адрес отелей на карте.</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Цель:</strong> детальное
+        расположение отеля можно определить на интерактивной карте
+        с помощью изменения масштаба карты.</th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест-кейсы</strong></th>
+      </tr>
+      <tr>
+        <th style="text-align: center;">Идентификатор
+        интерфейса</th>
+        <th style="text-align: center;">Шаг</th>
+        <th style="text-align: center;">Введенное значение</th>
+      </tr>
+      <tr>
+        <th>1. Главная страница</th>
+        <th>Нажать на пункт меню в шапке сайта «Где найти»</th>
+        <th>-</th>
+      </tr>
+      <tr>
+        <th>2. Главная страница</th>
+        <th>Увеличить масштаб карты прокруткой мыши</th>
+        <th>-</th>
+      </tr>
+      <tr>
+        <th>3. Главная страница</th>
+        <th>Уменьшить масштаб карты прокруткой мыши</th>
+        <th>-</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Скрипт:</strong> нет</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Ожидаемые результаты:</strong>
+        детальное расположение отеля можно определить на
+        интерактивной карте с помощью изменения масштаба
+        карты.</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Фактические
+        результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Идентификатор теста:</strong>
+        Capsule-3</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Тестируемое требование:</strong> у
+        пользователя должна быть возможность зарегистрироваться на
+        сайте.</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Цель:</strong> при вводе валидных
+        требуемых данных, пользователь должен быть зарегистрирован
+        на сайте и получить на указанную почту письмо об успешной
+        регистрации.</th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест-кейсы</strong></th>
+      </tr>
+      <tr>
+        <th style="text-align: center;">Идентификатор
+        интерфейса</th>
+        <th style="text-align: center;">Шаг</th>
+        <th style="text-align: center;">Введенное значение</th>
+      </tr>
+      <tr>
+        <th>1. Главная страница</th>
+        <th>Нажать на кнопку «Войти»</th>
+        <th>-</th>
+      </tr>
+      <tr>
+        <th>2. Экран входа</th>
+        <th>Указать значение в поле «Имя и фамилия»</th>
+        <th>Мария Иванова</th>
+      </tr>
+      <tr>
+        <th>заполните ячейки таблицы недостающей информацией</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Скрипт:</strong> нет</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Ожидаемые результаты:</strong>
+        пользователь должен быть зарегистрирован на сайте и
+        получить на указанную почту письмо об успешной
+        регистрации</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Фактические
+        результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Идентификатор теста:</strong>
+        Capsule-4</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Тестируемое требование:</strong> у
+        пользователя должна быть возможность зарегистрироваться на
+        сайте.</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Цель:</strong> если хотя бы одно
+        обязательное для заполнения поля не заполнено, регистрация
+        должна быть недоступна. Кнопка «Зарегистрироваться» должна
+        быть неактивной.</th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест-кейсы</strong></th>
+      </tr>
+      <tr>
+        <th style="text-align: center;">Идентификатор
+        интерфейса</th>
+        <th style="text-align: center;">Шаг</th>
+        <th style="text-align: center;">Введенное значение</th>
+      </tr>
+      <tr>
+        <th>заполните ячейки таблицы недостающей информацией</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Скрипт:</strong> нет</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Ожидаемые результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Фактические
+        результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Идентификатор теста:</strong>
+        Capsule-5</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Тестируемое требование:</strong> у
+        пользователя должна быть возможность зарегистрироваться на
+        сайте.</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Цель:</strong> если в поле формы
+        регистрации введены невалидные данные, такое поле должно
+        подсвечиваться.</th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест-кейсы</strong></th>
+      </tr>
+      <tr>
+        <th style="text-align: center;">Идентификатор
+        интерфейса</th>
+        <th style="text-align: center;">Шаг</th>
+        <th style="text-align: center;">Введенное значение</th>
+      </tr>
+      <tr>
+        <th>1. Главная страница</th>
+        <th>Нажать на кнопку «Войти»</th>
+        <th>-</th>
+      </tr>
+      <tr>
+        <th>2. Экран входа</th>
+        <th>Указать невалидное значение в поле «Имя и фамилия»</th>
+        <th>123</th>
+      </tr>
+      <tr>
+        <th>3. Экран входа</th>
+        <th>Указать невалидное значение в поле «Телефон»</th>
+        <th>123456789000</th>
+      </tr>
+      <tr>
+        <th>4. Экран входа</th>
+        <th>Указать невалидное значение в поле «Email»</th>
+        <th>123</th>
+      </tr>
+      <tr>
+        <th>5. Экран входа</th>
+        <th>Указать значение в поле «Пароль»</th>
+        <th>qwerty123</th>
+      </tr>
+      <tr>
+        <th>6. Экран входа</th>
+        <th>Указать значение в поле «Пароль повторно»</th>
+        <th>qwerty123</th>
+      </tr>
+      <tr>
+        <th>7. Экран входа</th>
+        <th>Сделать активным чекбокс с согласием с политиками
+        конфиденциальности</th>
+        <th>-</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Скрипт:</strong> нет</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Ожидаемые результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Фактические
+        результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Идентификатор теста:</strong>
+        Capsule-6</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Тестируемое требование:</strong> у
+        пользователя должна быть возможность зарегистрироваться на
+        сайте</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Цель:</strong> если символы,
+        которые введены в поля «Пароль» и «Пароль повторно» не
+        совпадают, регистрация для пользователя должна быть
+        недоступна. Кнопка «Зарегистрироваться» должна быть
+        неактивной, должна быть выведена подсказка о несовпадении
+        полей.</th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест-кейсы</strong></th>
+      </tr>
+      <tr>
+        <th>заполните ячейки таблицы недостающей информацией</th>
+        <th style="text-align: center;"></th>
+        <th style="text-align: center;"></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Скрипт:</strong> нет</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Ожидаемые результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Фактические
+        результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Идентификатор теста:</strong>
+        Capsule-7</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Тестируемое требование:</strong> у
+        пользователя должна быть возможность зарегистрироваться на
+        сайте.</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Цель:</strong> при повторной
+        регистрации пользователя с ранее введенными данными, должно
+        выводиться уведомление «Пользователь уже существует».</th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест-кейсы</strong></th>
+      </tr>
+      <tr>
+        <th style="text-align: center;">Идентификатор
+        интерфейса</th>
+        <th style="text-align: center;">Шаг</th>
+        <th style="text-align: center;">Введенное значение</th>
+      </tr>
+      <tr>
+        <th>заполните ячейки таблицы недостающей информацией</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Скрипт:</strong> нет</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Ожидаемые результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Фактические
+        результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Идентификатор теста:</strong>
+        Capsule-8</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Тестируемое требование:</strong> у
+        неавторизованного пользователя сайта должна быть
+        возможность забронировать отель.</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Цель:</strong> неавторизованный
+        пользователь, который ранее не проходил регистрацию,
+        заполняет форму бронирования валидными данными и активирует
+        чекбокс о согласии на создание личного кабинета, бронирует
+        отель и получает на почту уведомление об успешном
+        бронировании, а также логин и пароль от личного
+        кабинета.</th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест-кейсы</strong></th>
+      </tr>
+      <tr>
+        <th style="text-align: center;">Идентификатор
+        интерфейса</th>
+        <th style="text-align: center;">Шаг</th>
+        <th style="text-align: center;">Введенное значение</th>
+      </tr>
+      <tr>
+        <th>1. Главная страница</th>
+        <th>Нажать на кнопку «Забронировать»</th>
+        <th>заполните ячейки таблицы недостающей информацией</th>
+      </tr>
+      <tr>
+        <th>2. Экран бронирования</th>
+        <th>Указать дату бронирования в поле «Дата»</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th>3. Экран бронирования</th>
+        <th>Указать время бронирования в поле «Начало аренды»</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th>4. Экран бронирования</th>
+        <th>Нажать на кнопки увеличения/уменьшения в поле
+        «Количество часов»</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th>5. Экран бронирования</th>
+        <th>Сверить количество часов и итоговую сумму в поле
+        «Итого» (1 час = 400 руб.)</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th>заполните ячейки таблицы недостающей информацией</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Скрипт:</strong> нет</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Ожидаемые результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Фактические
+        результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Идентификатор теста:</strong>
+        Capsule-9</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Тестируемое требование:</strong> у
+        авторизованного пользователя сайта должна быть возможность
+        забронировать отель без ввода персональных данных.</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Цель:</strong> авторизованный
+        пользователь сайта бронирует отель. Контактная информация
+        заполняются данными из профиля.</th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест-кейсы</strong></th>
+      </tr>
+      <tr>
+        <th style="text-align: center;">Идентификатор
+        интерфейса</th>
+        <th style="text-align: center;">Шаг</th>
+        <th style="text-align: center;">Введенное значение</th>
+      </tr>
+      <tr>
+        <th>заполните ячейки таблицы недостающей информацией</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Скрипт:</strong> нет</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Ожидаемые результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Фактические
+        результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Идентификатор теста:</strong>
+        Capsule-10</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Тестируемое требование:</strong> у
+        авторизованного пользователя сайта должна быть возможность
+        просмотреть историю своих бронирований.</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Цель:</strong> в списке «Истории
+        бронирования» присутствуют запланированные
+        бронирования.</th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест-кейсы</strong></th>
+      </tr>
+      <tr>
+        <th style="text-align: center;">Идентификатор
+        интерфейса</th>
+        <th style="text-align: center;">Шаг</th>
+        <th style="text-align: center;">Введенное значение</th>
+      </tr>
+      <tr>
+        <th>1. Главная страница</th>
+        <th>Нажать на кнопку личного кабинета пользователя</th>
+        <th>-</th>
+      </tr>
+      <tr>
+        <th>2. Личный кабинет</th>
+        <th>Перейти к части страницы «История бронирований»</th>
+        <th>-</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Скрипт:</strong> нет</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Ожидаемые результаты:</strong> в
+        списке «Истории бронирования» присутствуют бронирования из
+        тестов Capsule-8 и Capsule-9.</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Фактические
+        результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Идентификатор теста:</strong>
+        Capsule-11</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Тестируемое требование:</strong> у
+        авторизованного пользователя сайта должна быть возможность
+        изменить контактный номер телефона и e-mail.</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Цель:</strong> авторизованный
+        пользователь сайта успешно редактирует контактный номер
+        телефона и e-mail.</th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест-кейсы</strong></th>
+      </tr>
+      <tr>
+        <th style="text-align: center;">Идентификатор
+        интерфейса</th>
+        <th style="text-align: center;">Шаг</th>
+        <th style="text-align: center;">Введенное значение</th>
+      </tr>
+      <tr>
+        <th>заполните ячейки таблицы недостающей информацией</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Скрипт:</strong> нет</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Ожидаемые результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Фактические
+        результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Идентификатор теста:</strong>
+        Capsule-12</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Тестируемое требование:</strong> у
+        авторизованного пользователя сайта должна быть возможность
+        отменить запланированное бронирование.</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Цель:</strong> бронирование отеля
+        успешно отменено.</th>
+      </tr>
+      <tr>
+        <th colspan="3" style="text-align: center;">
+        <strong>Тест-кейсы</strong></th>
+      </tr>
+      <tr>
+        <th style="text-align: center;">Идентификатор
+        интерфейса</th>
+        <th style="text-align: center;">Шаг</th>
+        <th style="text-align: center;">Введенное значение</th>
+      </tr>
+      <tr>
+        <th>заполните ячейки таблицы недостающей информацией</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Скрипт:</strong> нет</th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Ожидаемые результаты:</strong></th>
+      </tr>
+      <tr>
+        <th colspan="3"><strong>Фактические
+        результаты:</strong></th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</body>
+</html>
