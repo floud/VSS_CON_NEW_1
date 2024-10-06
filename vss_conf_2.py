@@ -2,15 +2,37 @@ import os
 import subprocess
 import requests
 import shutil
+from datetime import datetime
+import random
+import json
+import string
 
 # Настройки Confluence
-from secrets_1 import AUTH, CONFLUENCE_CONTENT_URL, LOCAL_VSS_PATH, SPACE_KEY
+from secrets_1 import AUTH, CONFLUENCE_CONTENT_URL, CONFLUENCE_API_URL, LOCAL_VSS_PATH, SPACE_KEY
 
 HEADERS = {
     'Authorization': f'Bearer {AUTH}',
     'X-Atlassian-Token': 'nocheck'}
 PARENT_PAGE_ID = "360468"  # ID родительской страницы в Confluence
 
+# Функция для проверки существования страницы
+def page_exists(title, space_key):
+    url = f"{CONFLUENCE_API_URL}/content?title={title}&spaceKey={space_key}"
+    response = requests.get(url, headers=HEADERS)
+    
+    if response.status_code == 200:
+        data = response.json()
+        if data['size'] > 0:  # Если найдена страница с таким названием
+            return data['results'][0]['id']
+    return None
+
+# Функция для генерации уникального названия
+def generate_unique_title(title):
+    # Добавляем текущую дату и время к названию
+    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    unique_suffix = ''.join(random.choices(string.ascii_lowercase + string.digits, k=5))  # Генерация случайного суффикса
+    new_title = f"{title} - {current_time} - {unique_suffix}"
+    return new_title
 def convert_word_to_html(word_file):
     # Генерация имени для HTML файла и директории media
     base_name = os.path.splitext(os.path.basename(word_file))[0]
@@ -28,12 +50,20 @@ def convert_word_to_html(word_file):
     return html_file, media_dir
 
 def upload_html_and_media_to_confluence(html_file, media_dir, parent_id):
+    # Проверяем, существует ли страница с таким названием
+    title = os.path.basename(html_file)
+    existing_page_id = page_exists(title, SPACE_KEY)
+    
+    if existing_page_id:
+        print(f"Страница с названием '{title}' уже существует. Генерация уникального названия.")
+        title = generate_unique_title(title)  # Генерация уникального названия
+        
     # Загрузка HTML файла как страницы
     with open(html_file, 'r') as f:
         html_content = f.read()
         data = {
             'type': 'page',
-            'title': os.path.basename(html_file),
+            'title': title,
             'ancestors': [{'id': parent_id}],
             'space': {'key': SPACE_KEY},
             'body': {
@@ -83,6 +113,13 @@ def upload_attachment_to_confluence(file_path, parent_id):
         print(f"An error occurred while uploading file '{file_name}': {str(e)}")
 
 def create_confluence_page(title, parent_id):
+    # Проверяем, существует ли страница с таким названием
+    existing_page_id = page_exists(title, SPACE_KEY)
+    
+    if existing_page_id:
+        print(f"Страница с названием '{title}' уже существует. Генерация уникального названия.")
+        title = generate_unique_title(title)  # Генерация уникального названия
+    
     """Создание новой страницы в Confluence"""
     data = {
         'type': 'page',
